@@ -18,7 +18,7 @@ jobs:
 #      uses: docker-practice/actions-setup-docker@master
 #      timeout-minutes: 12
     - uses: actions/checkout@v4
-    - name Test
+    - name: Test
       run: |
         ./start.sh
         curl 'http://127.0.0.1:9080/webdav'
