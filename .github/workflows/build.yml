@@ -1,0 +1,24 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: macos-13
+    steps:
+#    - name: Install deps
+#      run: |
+#        brew install docker
+#        brew install colima
+#        colima start
+    - name: Setup Docker on macOS
+      uses: douglascamata/setup-docker-macos-action@v1-alpha
+#    - name: Setup Docker on macOS
+#      uses: docker-practice/actions-setup-docker@master
+#      timeout-minutes: 12
+    - uses: actions/checkout@v4
+    - name Test
+      run: |
+        ./start.sh
+        curl 'http://127.0.0.1:9080/webdav'
