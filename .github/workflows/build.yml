@@ -14,6 +14,7 @@ jobs:
 #        colima start
     - name: Setup Docker on macOS
       uses: douglascamata/setup-docker-macos-action@v1-alpha
+      colima-network-address: true
 #    - name: Setup Docker on macOS
 #      uses: docker-practice/actions-setup-docker@master
 #      timeout-minutes: 12
