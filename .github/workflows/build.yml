@@ -12,13 +12,13 @@ jobs:
 #        brew install docker
 #        brew install colima
 #        colima start
-    - name: Setup Docker on macOS
-      uses: douglascamata/setup-docker-macos-action@v1-alpha
-      with:
-        colima-network-address: true
 #    - name: Setup Docker on macOS
-#      uses: docker-practice/actions-setup-docker@master
-#      timeout-minutes: 12
+#      uses: douglascamata/setup-docker-macos-action@v1-alpha
+#      with:
+#        colima-network-address: true
+    - name: Setup Docker on macOS
+      uses: docker-practice/actions-setup-docker@master
+      timeout-minutes: 12
     - uses: actions/checkout@v4
     - name: Test
       run: |
