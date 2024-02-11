@@ -10,8 +10,8 @@ jobs:
     - name: Install deps
       run: |
         brew install docker
-        brew install colima
-        colima start --network-address --vm-type=vz
+        brew install colima@0.5.6
+        colima start --network-address
 #    - name: Setup Docker on macOS
 #      uses: douglascamata/setup-docker-macos-action@v1-alpha
 #      with:
@@ -31,5 +31,5 @@ jobs:
         curl 'http://127.0.0.1:9080/webdav'
 
 
-
 #        curl 'http://localhost:9080/webdav'
+#        sudo /usr/libexec/ApplicationFirewall/socketfilterfw --add "$(brew --prefix colima)/bin/colima"
