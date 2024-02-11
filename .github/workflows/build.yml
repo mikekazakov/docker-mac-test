@@ -23,7 +23,7 @@ jobs:
     - name: Test
       run: |
         ./start.sh
-        sleep 5
+        sleep 10
         docker ps
         docker logs nc_webdav_ubuntu_2004
         netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
