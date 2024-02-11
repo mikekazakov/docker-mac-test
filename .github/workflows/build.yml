@@ -27,6 +27,7 @@ jobs:
         docker ps
         docker logs nc_webdav_ubuntu_2004
         netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
+        colima status
         curl 'http://127.0.0.1:9080/webdav'
 
 
