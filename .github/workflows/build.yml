@@ -27,4 +27,5 @@ jobs:
         docker ps
         docker logs nc_webdav_ubuntu_2004
         netstat -anvp tcp | awk 'NR<3 || /LISTEN/'
-        curl 'http://127.0.0.1:9080/webdav'
+#        curl 'http://127.0.0.1:9080/webdav'
+        curl 'http://localhost:9080/webdav'
