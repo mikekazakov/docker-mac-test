@@ -3,8 +3,6 @@ name: Test
 on:
   workflow_dispatch:
 
-#        brew install colima@0.5.6
-
 jobs:
   test:
     runs-on: macos-13
@@ -12,8 +10,12 @@ jobs:
     - name: Install deps
       run: |
         brew install docker
-        sudo curl -L -o /usr/local/bin/colima https://github.com/abiosoft/colima/releases/download/v0.5.6/colima-Darwin-x86_64 && sudo chmod +x /usr/local/bin/colima
-        colima start --network-address
+        brew install colima
+        brew unlink colima
+        mkdir -p /usr/local/bin
+        curl -L -o /usr/local/bin/colima https://github.com/abiosoft/colima/releases/download/v0.5.6/colima-Darwin-x86_64 && sudo chmod +x /usr/local/bin/colima
+        /usr/local/bin/colima start --network-address
+#        colima start --network-address
 #    - name: Setup Docker on macOS
 #      uses: douglascamata/setup-docker-macos-action@v1-alpha
 #      with:
